@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "start:dev": "concurrently \"nodemon server.js\" \"npm run lint\"",
-    "lint": "npx esw ./ --watch --fix"
+    "start:dev": "concurrently \"nodemon server.js\" \"npm run lint\""
   },
   "keywords": [],
   "author": "",
@@ -25,8 +24,6 @@
   },
   "devDependencies": {
     "concurrently": "^8.0.1",
-    "eslint": "^8.41.0",
-    "eslint-watch": "^8.0.0",
     "nodemon": "^2.0.22"
   }
 }
