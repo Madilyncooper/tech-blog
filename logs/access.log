@@ -33,3 +33,10 @@ POST /api/users 400 1163 - 109.253 ms
 POST /api/users 400 1163 - 112.138 ms
 GET /login 200 1003 - 24.320 ms
 POST /api/users 400 1163 - 107.882 ms
+GET / 200 425 - 39.337 ms
+GET /login 304 - - 4.575 ms
+POST /api/users 400 1163 - 107.789 ms
+POST /api/users 400 1163 - 105.495 ms
+POST /api/users 400 1163 - 116.422 ms
+GET /login 304 - - 21.806 ms
+POST /api/users 400 1163 - 103.989 ms

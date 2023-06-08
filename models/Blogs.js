@@ -20,42 +20,18 @@ Blogs.init(
         key: 'id'
       }
     },
-    address: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    food_types: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    allergens: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    start_time: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    end_time: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    comment: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    latitude:{
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    longitude:{
-      type: DataTypes.STRING,
-      allowNull: false
-    }
   },
   {
     hooks: {
-    
+
     },
     sequelize,
     timestamps: false,
