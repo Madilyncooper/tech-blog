@@ -4,10 +4,11 @@ const withAuth = require('../utils/auth');
 const { Blogs } = require('../models');
 require('dotenv').config();
 
+
 router.get('/', async (req, res) => {
   try {
     const dbRes = await Blogs.findAll();
-    
+
     const blogContent = dbRes.map(blog => {
       return blog.get({ plain: true });
     });
@@ -31,9 +32,9 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/blogAdd',withAuth, (req, res) => {
+router.get('/dashboard',withAuth, (req, res) => {
 
-  res.render('loggedInUser', {
+  res.render('dashboard', {
     logged_in: req.session.logged_in,
     first_name: req.session.first_name
   });
