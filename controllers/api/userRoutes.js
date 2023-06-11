@@ -1,13 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// router.get('/dashboard', async (req, res) => {
-//   if (req.session.logged_in) {
-//     res.redirect('/dashboard');
-//     return;
-//   }
-//   res.render('dashboard');
-// })
 
 router.post('/', async (req, res) => {
   try {

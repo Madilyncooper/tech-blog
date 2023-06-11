@@ -40,6 +40,14 @@ router.get('/dashboard',withAuth, (req, res) => {
   });
 });
 
+router.get('/blogAdd', withAuth, (req, res) => {
+
+  res.render('blogAdd', {
+    logged_in: req.session.logged_in,
+    name: req.session.first_name
+  })
+})
+
 
 
 
