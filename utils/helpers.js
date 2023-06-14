@@ -1,7 +1,15 @@
-// These are functions that will be available in Handlebars
+
 module.exports = {
   format_date: (date) => {
-    // Format date as MM/DD/YYYY
+
     return date.toLocaleDateString();
   },
+  format_time: (time) => {
+    const now = new Date(time);
+
+    const month = now.getMonth() + 1;
+    const year = now.getFullYear();
+    const day = now.getDate();
+    return `${month}/${day}/${year}`; 
+  }
 };

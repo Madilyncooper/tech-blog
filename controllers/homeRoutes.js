@@ -38,7 +38,11 @@ router.get('/login', (req, res) => {
 router.get('/dashboard',withAuth, async (req, res) => {
 
   try{
-    const dbRes = await Blogs.findAll();
+    const dbRes = await Blogs.findAll({
+      where: {
+        user_id: req.session.user_id,
+      }
+    });
 
     const blogContent = dbRes.map(blog => {
       return blog.get({ plain: true });
