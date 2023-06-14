@@ -12,11 +12,12 @@ router.get('/', async (req, res) => {
     const blogContent = dbRes.map(blog => {
       return blog.get({ plain: true });
     });
+
     console.log(blogContent);
 
     res.render('homepage', {
       logged_in: req.session.logged_in,
-      name: req.session.name,
+      name: req.session.name, 
       blogContent,
     });
   } catch (err) {
@@ -25,26 +26,42 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+
   if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
+  
   res.render('login');
 });
 
-router.get('/dashboard',withAuth, (req, res) => {
+router.get('/dashboard',withAuth, async (req, res) => {
 
-  res.render('dashboard', {
-    logged_in: req.session.logged_in,
-    first_name: req.session.first_name
-  });
+  try{
+    const dbRes = await Blogs.findAll();
+
+    const blogContent = dbRes.map(blog => {
+      return blog.get({ plain: true });
+    });
+  
+    console.log(blogContent);
+  
+    res.render('dashboard', {
+      logged_in: req.session.logged_in,
+      name: req.session.name,
+      id: req.session.user_id,
+      blogContent,
+    });
+  }catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/blogAdd', withAuth, (req, res) => {
 
   res.render('blogAdd', {
     logged_in: req.session.logged_in,
-    name: req.session.first_name
+    name: req.session.name
   })
 })
 

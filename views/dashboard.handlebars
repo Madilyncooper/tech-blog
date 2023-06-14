@@ -1,6 +1,28 @@
 {{> nav}}
 
+
+
 <a id="addNewBlogBtn" href="/blogAdd">Add New Post</a>
-
-
-<script src="/public/js/blogAdd.js"></script>
+<div>
+    <div class="card">
+        <ul class="card-body">
+            {{!-- {{#each blogContent}}
+            {{#if this.user_id === id}}
+            <li>
+                <h2>{{this.title}}</h2>
+                <p>{{this.content}}</p>
+            </li>
+          
+            {{/each}}
+              {{/if}} --}}
+              {{id}}
+              {{#each blogContent}}
+              <li>
+                <h2>{{this.title}}</h2>
+                <h2>{{this.content}}</h2>
+              </li>
+              {{/each}}
+        </ul>
+        
+    </div>
+</div>
