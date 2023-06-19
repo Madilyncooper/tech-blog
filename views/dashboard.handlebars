@@ -6,16 +6,20 @@
 <div>
     <div class="card">
         <ul class="card-body">
-              <li>
-                {{#each blogContent}}
-                <h2>{{this.title}}</h2>
-                
-                <h2>{{this.content}}</h2>
-{{/each}}
-              </li>
-           
-              
+            {{#each blogContent}}
+            <li>
+                <div class="card">
+                <a href="/dashboard/edits/{{id}}">
+                    <span>{{this.title}}</span>
+                    {{!-- <span>{{format_date this.createdAt}}</span> figure this out --}}
+                </a>
+                <p>
+                    {{format_time this.date}}
+                </p>               
+                </div>   
+                {{/each}}            
+            </li>
         </ul>
-        
+
     </div>
 </div>

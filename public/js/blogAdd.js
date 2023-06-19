@@ -5,9 +5,12 @@ const blogAddFormHandler = async (event) => {
     const content = document.querySelector('.content').value.trim();
   
     if ( content && title ) {
+      let date = new Date().toLocaleDateString('en-US');
+
+  
       const response = await fetch('/api/blogAdd', {
         method: 'POST',
-        body: JSON.stringify({ title, content }),
+        body: JSON.stringify({ title, content, date }),
         headers: { 'Content-Type': 'application/json' },
       });
     
