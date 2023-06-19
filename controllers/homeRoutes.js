@@ -1,13 +1,15 @@
 const router = require('express').Router();
 const Op = require('sequelize').Op;
 const withAuth = require('../utils/auth');
-const { Blogs } = require('../models');
+const { Blogs, User } = require('../models');
 require('dotenv').config();
 
 
 router.get('/', async (req, res) => {
   try {
-    const dbRes = await Blogs.findAll();
+    const dbRes = await Blogs.findAll({
+      include: [User],
+    });
 
     const blogContent = dbRes.map(blog => {
       return blog.get({ plain: true });
@@ -24,6 +26,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 router.get('/login', (req, res) => {
 
