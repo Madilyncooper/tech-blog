@@ -7,16 +7,19 @@
 </div>
 
 {{#if blogContent.[0].id}}
+{{#each blogContent}}
 <div class="card">
     <ul class="card-body">
-        {{#each blogContent}}
         <li>
-            <h2>{{this.title}}</h2>
+            <h2>
+                <a href="/comment/{{this.id}}">{{this.title}}</a>
+            </h2>
             <p>{{this.content}}</p>
             <p>Posted by {{this.user.name}} on {{format_date this.date}}</p>
         </li>
-        {{/each}}
+       
     </ul>
+     {{/each}}
 </div>
 {{else}}
 <h2>There are no blog posts at this time. Check back in for new postings!</h2>

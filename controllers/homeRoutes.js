@@ -95,6 +95,29 @@ router.get('/dashboard/edits/:id',withAuth, async (req, res) => {
   }
 });
 
+router.get('/comment/:id',withAuth, async (req, res) => {
 
+  try{
+
+    const dbRes = await Blogs.findAll({
+      include: [User],
+      where: {
+        id: req.params.id,
+      }
+    });
+
+    const blogComment = dbRes.map(blog => {
+      return blog.get({ plain: true });
+    });
+    res.render('blogComments', {
+      logged_in: req.session.logged_in,
+      name: req.session.name,
+      blogComment
+    });
+    console.log(blogComment);
+  }catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
