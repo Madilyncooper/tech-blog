@@ -34,6 +34,11 @@ $ git clone <paste the copied link>
 
 ## Deploy: 
 
-
+https://tech-blogss-8ab7d7dde633.herokuapp.com/
 
  ## Screenshot:
+ <img width="1131" alt="Screenshot 2023-06-25 at 7 18 49 PM" src="https://github.com/Madilyncooper/tech-blog/assets/124405920/f0e279b0-ed81-455e-9d0e-1b6a7fa6d076">
+ <img width="1262" alt="Screenshot 2023-06-25 at 7 19 43 PM" src="https://github.com/Madilyncooper/tech-blog/assets/124405920/5bc5e51c-f7d7-4afa-bc67-2c58f0220f30">
+ <img width="1262" alt="Screenshot 2023-06-25 at 7 19 59 PM" src="https://github.com/Madilyncooper/tech-blog/assets/124405920/a6bd347d-4a4a-48f2-b0a3-6db1e07a8e34">
+ <img width="1262" alt="Screenshot 2023-06-25 at 7 20 07 PM" src="https://github.com/Madilyncooper/tech-blog/assets/124405920/36de4eae-008d-4f47-8e9b-d890458c4622">
+ <img width="1262" alt="Screenshot 2023-06-25 at 7 19 50 PM" src="https://github.com/Madilyncooper/tech-blog/assets/124405920/8614c9b1-cb1e-4d89-8fd0-77d730689ec4">
