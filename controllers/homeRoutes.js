@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Op = require('sequelize').Op;
 const withAuth = require('../utils/auth');
-const { Blogs, User } = require('../models');
+const { Blogs, User, Comments } = require('../models');
 require('dotenv').config();
 
 
@@ -95,7 +95,7 @@ router.get('/dashboard/edits/:id',withAuth, async (req, res) => {
   }
 });
 
-router.get('/comment/:id',withAuth, async (req, res) => {
+router.get('/comment/:id', withAuth, async (req, res) => {
 
   try{
 

@@ -1,21 +1,22 @@
-<h1>This is the homepage</h1>
 {{> nav}}
 <div>
     {{#if name}}
-    <p>Welcome back {{name}}</p>
+    <p class="text-end me-4 text-success">Welcome back {{name}}</p>
     {{/if}}
 </div>
 
 {{#if blogContent.[0].id}}
 {{#each blogContent}}
-<div class="card">
-    <ul class="card-body">
-        <li>
+<div class="mt-5">
+    <ul class="d-flex justify-content-center" style="height: 300px;">
+        <li class="card me-3 w-75 h-100 boarder position-relative">
+            <div class="card-header bg-warning">
             <h2>
-                <a href="/comment/{{this.id}}">{{this.title}}</a>
+                <a class="get text-light ms-4 d-inline" href="/comment/{{this.id}}">{{this.title}}</a>
             </h2>
-            <p>{{this.content}}</p>
-            <p>Posted by {{this.user.name}} on {{format_date this.date}}</p>
+            <p class="fw-bold d-inline text-light position-absolute top-0 end-0 mt-3 me-2">Posted by {{this.user.name}} {{format_date this.date}}</p>
+            </div>
+            <p class="card-body fs-5">{{this.content}}</p>
         </li>
        
     </ul>

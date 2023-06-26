@@ -1,14 +1,24 @@
 const router = require('express').Router();
-const { Comments } = require('../../models');
+const { Comments, Blogs, User } = require('../../models');
 require('dotenv').config();
+
+router.get('/', async (req, res) => {
+  try {
+      const dbRes = await Comments.findAll();
+      res.json(dbRes);
+  } catch (error) {
+      res.json({ err: 'Uh oh...' });
+  }
+});
 
 router.post('/', async (req, res) => {
   try {
-    const newComment = await Comments.create({
-      ...req.body,
-      userId: req.session.userId,
+    const dbRes = await Comments.create({
+      body: req.body.body,
+
     });
-    res.json(newComment);
+    res.status(200).json(dbRes);
+
   } catch (err) {
     res.status(500).json(err);
   }
