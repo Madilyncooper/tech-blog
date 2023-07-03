@@ -11,16 +11,17 @@
     <ul class="d-flex justify-content-center" style="height: 300px;">
         <li class="card me-3 w-75 h-75 boarder position-relative">
             <div class="card-header bg-warning">
-            <h2>
-                <a class="get text-light ms-4 d-inline" href="/comment/{{this.id}}">{{this.title}}</a>
-            </h2>
-            <p class="fw-bold d-inline text-light position-absolute top-0 end-0 mt-3 me-2">Posted by {{this.user.name}} {{format_date this.date}}</p>
+                <h2>
+                    <a class="get text-light ms-4 d-inline" href="/comment/{{this.id}}">{{this.title}}</a>
+                </h2>
+                <p class="fw-bold d-inline text-light position-absolute top-0 end-0 mt-3 me-2">Posted by
+                    {{this.user.name}} {{format_date this.date}}</p>
             </div>
             <p class="card-body fs-5">{{this.content}}</p>
         </li>
-       
+
     </ul>
-     {{/each}}
+    {{/each}}
 </div>
 {{else}}
 <h2>There are no blog posts at this time. Check back in for new postings!</h2>

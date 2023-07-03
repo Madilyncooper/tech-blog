@@ -6,7 +6,7 @@ const editFormHandler = async (event) => {
   const title = document.querySelector('input[name="post-title"]').value;
   const content = document.querySelector('textarea[name="post-body"]').value;
 
- const response = await fetch(`/api/editBlog/${postId}`, {
+  const response = await fetch(`/api/editBlog/${postId}`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
@@ -24,7 +24,7 @@ const editFormHandler = async (event) => {
 };
 
 const deleteClickHandler = async () => {
- const response = await fetch(`/api/editBlog/${postId}`, {
+  const response = await fetch(`/api/editBlog/${postId}`, {
     method: 'DELETE'
   });
 

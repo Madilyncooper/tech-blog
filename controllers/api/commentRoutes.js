@@ -4,10 +4,10 @@ require('dotenv').config();
 
 router.get('/', async (req, res) => {
   try {
-      const dbRes = await Comments.findAll();
-      res.json(dbRes);
+    const dbRes = await Comments.findAll();
+    res.json(dbRes);
   } catch (error) {
-      res.json({ err: 'Uh oh...' });
+    res.json({ err: 'Uh oh...' });
   }
 });
 

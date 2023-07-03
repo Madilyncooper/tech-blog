@@ -12,14 +12,13 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 const accessLogStream = fs.createWriteStream(path.join(__dirname, './logs/access.log'), { flags: 'a' });
 
 const sess = {
-  secret: 'Super secret secret', // CHANGE THIS
+  secret: 'Super secret secret',
   cookie: {
-    maxAge: 1 * 60 * 60 * 1000, // UPDATE THIS AS DESIRED, currently set to expire in 1 hour
+    maxAge: 1 * 60 * 60 * 1000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
@@ -33,7 +32,6 @@ const sess = {
 
 app.use(session(sess));
 
-// Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

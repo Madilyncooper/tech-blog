@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       logged_in: req.session.logged_in,
-      name: req.session.name, 
+      name: req.session.name,
       blogContent,
     });
   } catch (err) {
@@ -34,13 +34,13 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-  
+
   res.render('login');
 });
 
-router.get('/dashboard',withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
 
-  try{
+  try {
     const dbRes = await Blogs.findAll({
       where: {
         user_id: req.session.user_id,
@@ -50,16 +50,16 @@ router.get('/dashboard',withAuth, async (req, res) => {
     const blogContent = dbRes.map(blog => {
       return blog.get({ plain: true });
     });
-  
+
     console.log(blogContent);
-  
+
     res.render('dashboard', {
       logged_in: req.session.logged_in,
       name: req.session.name,
       id: req.session.user_id,
       blogContent,
     });
-  }catch (err) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -72,9 +72,9 @@ router.get('/blogAdd', withAuth, (req, res) => {
   })
 })
 
-router.get('/dashboard/edits/:id',withAuth, async (req, res) => {
+router.get('/dashboard/edits/:id', withAuth, async (req, res) => {
 
-  try{
+  try {
 
     const dbRes = await Blogs.findAll({
       where: {
@@ -90,14 +90,14 @@ router.get('/dashboard/edits/:id',withAuth, async (req, res) => {
       name: req.session.name,
       blogEdit
     })
-  }catch (err) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
 
 router.get('/comment/:id', withAuth, async (req, res) => {
 
-  try{
+  try {
 
     const dbRes = await Blogs.findAll({
       include: [User],
@@ -115,7 +115,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
       blogComment
     });
     console.log(blogComment);
-  }catch (err) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
