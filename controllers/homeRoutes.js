@@ -95,7 +95,7 @@ router.get('/dashboard/edits/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/comment/:id', async (req, res) => {
+router.get('/comment/:id', withAuth, async (req, res) => {
 
   try {
 
@@ -115,7 +115,7 @@ router.get('/comment/:id', async (req, res) => {
         logged_in: req.session.logged_in,
         blogComment
       });
-      console.log(blogComment);
+      console.log(blogComment[0].Comments);
 
 
   } catch (err) {
