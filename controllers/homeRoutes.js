@@ -101,8 +101,8 @@ router.get('/comment/:id', async (req, res) => {
 
     const dbRes = await Blogs.findAll({
       include: [
-        Comments, User
-      ],
+        User, {
+          model: Comments, include: [User]}],
       where: {
         id: req.params.id,
       }

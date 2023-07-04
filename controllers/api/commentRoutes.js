@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const dbRes = await Comments.create({
+      
       body: req.body.body,
       user_id: req.session.user_id,
       blog_id: req.body.postId,
-      name: req.session.name,
 
     });
     res.status(200).json(dbRes);
