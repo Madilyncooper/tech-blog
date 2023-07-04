@@ -7,13 +7,13 @@ class Comments extends Model {
 
 Comments.init(
     {
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'user',
+        //         key: 'id'
+        //     }
+        // },
         body: {
             type: DataTypes.STRING,
             allowNull: false

@@ -15,6 +15,26 @@
     </article>
   </div>
 
+  {{!-- {{#if blogComment.[0].Comments.[0]}}
+    <section class="card">
+      <div class="card-header">
+        <h3>Comments</h3>
+      </div>
+
+      <div class="card-body">
+        {{#each blogComment.[0].Comments}}
+          <div>
+            <p>
+              {{this.body}}
+            </p>
+            <p>
+              &mdash; {{BlogComment.[0].}}, {{format_date createdAt}}
+            </p>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+  {{/if}} --}}
 
   <form id="new-comment-form" class="card mt-5 me-3 ms-3 w-25">
     <div class="card-header text-light bg-success">
